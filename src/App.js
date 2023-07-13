@@ -1,7 +1,8 @@
 import logo from './logo.svg';
 import './App.css';
+import { connect } from 'react-redux';
 
-function App() {
+function App({ posts }) {
   return (
     <div className="App">
       <header className="App-header">
@@ -17,9 +18,23 @@ function App() {
         >
           Learn React
         </a>
+        <ul>
+          {posts.map(post => (
+            <li key={post.id}>{post.title}</li>
+          ))}
+        </ul>
       </header>
     </div>
   );
 }
 
-export default App;
+/**
+ * The connect function takes another function as an argument: mapStateToProps.
+ * mapStateToProps determines what state from our store we want to pull into our component.
+ * In this case, we're specifying to only pull our state's posts property.
+ */
+const mapStateToProps = state => {
+  return { posts: state.posts }
+}
+
+export default connect(mapStateToProps)(App)

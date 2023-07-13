@@ -1,11 +1,11 @@
 import { createStore } from 'redux';
 
 const initialState = {
-  posts: [],
+  posts: [{ id: 1, title: 'Test Post' }],
   loginModal: {
     open: false
   }
-};
+}
 
 const reducer = (state = initialState, action) => {
 
