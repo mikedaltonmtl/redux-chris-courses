@@ -7,11 +7,22 @@ class App extends React.Component {
     super()
     this.state = {
       value: '',
-      postId: 2
+      postId: 1
     }
 
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  componentDidMount() {
+    fetch('https://jsonplaceholder.typicode.com/posts')
+      .then(response => response.json())
+      .then(json => {
+        this.props.dispatch({
+          type: 'LOAD_POSTS',
+          payload: json
+        })
+      })
   }
 
   handleChange(event) {
