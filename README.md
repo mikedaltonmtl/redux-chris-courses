@@ -1,3 +1,9 @@
+## What is this repo?
+I've already played with React's useReducer hook, so it's time to step it up and go full Redux!
+
+I'm following the React Redux Tutorial for Beginners by Christopher Lis
+https://chriscourses.com/blog/react-redux-tutorial-for-beginners?plan= 
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
